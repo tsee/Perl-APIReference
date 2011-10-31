@@ -6,7 +6,7 @@ use warnings;
 use Carp qw/croak/;
 use version;
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 use Class::XSAccessor
   getters => {
@@ -16,11 +16,12 @@ use Class::XSAccessor
 
 sub _par_loader_hint {
   require Perl::APIReference::Generator;
-  require Perl::APIReference::V5_014_001;
+  require Perl::APIReference::V5_014_002;
 }
 
 our %Perls = (
   5.015001 => 'V5_015_001',
+  5.014002 => 'V5_014_002',
   5.014001 => 'V5_014_001',
   5.014    => 'V5_014_000',
   5.012004 => 'V5_012_004',
@@ -46,7 +47,7 @@ our %Perls = (
 );
 
 our $NewestAPI       = '5.015001';
-our $NewestStableAPI = '5.014001';
+our $NewestStableAPI = '5.014002';
 
 $Perls{'5.014000'} = $Perls{5.014};
 $Perls{'5.012000'} = $Perls{5.012};
@@ -157,7 +158,7 @@ Perl::APIReference - Programmatically query the perlapi
 =head1 SYNOPSIS
 
   use Perl::APIReference;
-  my $api = Perl::APIReference->new(perl_version => '5.12.4');
+  my $api = Perl::APIReference->new(perl_version => '5.14.2');
   my $api_index_hash = $api->index;
 
 =head1 DESCRIPTION
@@ -165,7 +166,7 @@ Perl::APIReference - Programmatically query the perlapi
 This module allows accessing the perlapi documentation for multiple
 releases of perl as an index (a hash).
 
-Currently, the stable releases perl 5.14.0-1,
+Currently, the stable releases perl 5.14.0-2,
 5.12.0-4, 5.10.0-1, 5.8.0-9, and 5.6.0-2
 are supported. To add support for another release, simply send me the
 release's F<perlapi.pod> via email or via an RT ticket and I'll add it
