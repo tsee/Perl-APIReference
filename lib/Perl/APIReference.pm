@@ -20,6 +20,7 @@ sub _par_loader_hint {
 }
 
 our %Perls = (
+  5.015004 => 'V5_015_004',
   5.015001 => 'V5_015_001',
   5.014002 => 'V5_014_002',
   5.014001 => 'V5_014_001',
@@ -46,7 +47,7 @@ our %Perls = (
   5.006    => 'V5_006_000',
 );
 
-our $NewestAPI       = '5.015001';
+our $NewestAPI       = '5.015004';
 our $NewestStableAPI = '5.014002';
 
 $Perls{'5.014000'} = $Perls{5.014};
@@ -172,7 +173,7 @@ are supported. To add support for another release, simply send me the
 release's F<perlapi.pod> via email or via an RT ticket and I'll add it
 in the next release.
 
-Additionally, the development release 5.15.1 is included.
+Additionally, the development releases 5.15.4 and 5.15.1 are included.
 API docs for development may be dropped from the distribution
 at any time. The general policy on this is to try
 and ship the APIs for the newest development release.
