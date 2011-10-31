@@ -1,0 +1,10 @@
+.*.swp
+.*.swo
+Makefile
+Makefile.old
+MYMETA.yml
+META.yml
+MYMETA.json
+META.json
+blib/
+pm_to_blib
