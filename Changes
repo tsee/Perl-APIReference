@@ -1,5 +1,8 @@
 Revision history for Perl extension Perl::APIReference.
 
+0.09  Tue Nov  1 08:24:00 2011
+  - Fix previous (broken) release.
+
 0.08  Mon Oct 31 07:59:00 2011
   - Support for perlapi of 5.14.2, 5.15.4
 
