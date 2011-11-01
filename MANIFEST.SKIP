@@ -9,3 +9,4 @@
 \B\.svn\b
 ^nohup.out
 ^Perl-APIReference-.*\.gz$
+\.git/
