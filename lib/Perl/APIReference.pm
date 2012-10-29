@@ -16,12 +16,12 @@ use Class::XSAccessor
 
 sub _par_loader_hint {
   require Perl::APIReference::Generator;
-  require Perl::APIReference::V5_014_003;
+  require Perl::APIReference::V5_016_001;
 }
 
 our %Perls = (
-#  5.016001 => 'V5_016_001',
-#  5.016    => 'V5_016_000',
+  5.016001 => 'V5_016_001',
+  5.016    => 'V5_016_000',
   5.015004 => 'V5_015_004',
   5.015001 => 'V5_015_001',
   5.014003 => 'V5_014_003',
@@ -50,10 +50,10 @@ our %Perls = (
   5.006    => 'V5_006_000',
 );
 
-our $NewestAPI       = '5.015004';
-our $NewestStableAPI = '5.014003';
+our $NewestAPI       = '5.016001';
+our $NewestStableAPI = '5.016001';
 
-#$Perls{'5.016000'} = $Perls{5.016};
+$Perls{'5.016000'} = $Perls{5.016};
 $Perls{'5.014000'} = $Perls{5.014};
 $Perls{'5.012000'} = $Perls{5.012};
 $Perls{'5.010000'} = $Perls{5.01};
@@ -171,13 +171,13 @@ Perl::APIReference - Programmatically query the perlapi
 This module allows accessing the perlapi documentation for multiple
 releases of perl as an index (a hash).
 
-Currently, the stable releases perl 5.14.0-3,
+Currently, the stable releases perl 5.16.0-1, 5.14.0-3,
 5.12.0-4, 5.10.0-1, 5.8.0-9, and 5.6.0-2
 are supported. To add support for another release, simply send me the
 release's F<perlapi.pod> via email or via an RT ticket and I'll add it
 in the next release.
 
-Additionally, the development releases 5.15.4 and 5.15.1 are included.
+Additionally, the development release 5.15.4 is included.
 API docs for development may be dropped from the distribution
 at any time. The general policy on this is to try
 and ship the APIs for the newest development release.
