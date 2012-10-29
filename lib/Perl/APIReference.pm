@@ -16,12 +16,15 @@ use Class::XSAccessor
 
 sub _par_loader_hint {
   require Perl::APIReference::Generator;
-  require Perl::APIReference::V5_014_002;
+  require Perl::APIReference::V5_014_003;
 }
 
 our %Perls = (
+#  5.016001 => 'V5_016_001',
+#  5.016    => 'V5_016_000',
   5.015004 => 'V5_015_004',
   5.015001 => 'V5_015_001',
+  5.014003 => 'V5_014_003',
   5.014002 => 'V5_014_002',
   5.014001 => 'V5_014_001',
   5.014    => 'V5_014_000',
@@ -29,7 +32,7 @@ our %Perls = (
   5.012003 => 'V5_012_003',
   5.012002 => 'V5_012_002',
   5.012001 => 'V5_012_001',
-  5.012000 => 'V5_012_000',
+  5.012    => 'V5_012_000',
   5.01     => 'V5_010_000',
   5.010001 => 'V5_010_001',
   5.008009 => 'V5_008_009',
@@ -48,8 +51,9 @@ our %Perls = (
 );
 
 our $NewestAPI       = '5.015004';
-our $NewestStableAPI = '5.014002';
+our $NewestStableAPI = '5.014003';
 
+#$Perls{'5.016000'} = $Perls{5.016};
 $Perls{'5.014000'} = $Perls{5.014};
 $Perls{'5.012000'} = $Perls{5.012};
 $Perls{'5.010000'} = $Perls{5.01};
@@ -167,7 +171,7 @@ Perl::APIReference - Programmatically query the perlapi
 This module allows accessing the perlapi documentation for multiple
 releases of perl as an index (a hash).
 
-Currently, the stable releases perl 5.14.0-2,
+Currently, the stable releases perl 5.14.0-3,
 5.12.0-4, 5.10.0-1, 5.8.0-9, and 5.6.0-2
 are supported. To add support for another release, simply send me the
 release's F<perlapi.pod> via email or via an RT ticket and I'll add it
@@ -221,7 +225,7 @@ Steffen Mueller, E<lt>smueller@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2009, 2010, 2011 by Steffen Mueller
+Copyright (C) 2009, 2010, 2011, 2012 by Steffen Mueller
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.6.0 or,
