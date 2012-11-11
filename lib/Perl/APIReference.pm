@@ -6,7 +6,7 @@ use warnings;
 use Carp qw/croak/;
 use version;
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 use Class::XSAccessor
   getters => {
@@ -23,6 +23,7 @@ our %Perls = (
   5.016002 => 'V5_016_002',
   5.016001 => 'V5_016_001',
   5.016    => 'V5_016_000',
+  5.015005 => 'V5_015_005',
   5.015004 => 'V5_015_004',
   5.015001 => 'V5_015_001',
   5.014003 => 'V5_014_003',
