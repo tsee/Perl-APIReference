@@ -10,3 +10,4 @@
 ^nohup.out
 ^Perl-APIReference-.*\.gz$
 \.git/
+\bMYMETA\..*$
