@@ -1,7 +1,7 @@
 package Perl::APIReference::V5_016_002;
 use strict;
 use warnings;
-use parent 'Perl::APIReference::V5_016_002';
+use parent 'Perl::APIReference::V5_016_000';
 
 sub new {
   my $class = shift;
