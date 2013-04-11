@@ -23,7 +23,6 @@ our %Perls = (
   5.016002 => 'V5_016_002',
   5.016001 => 'V5_016_001',
   5.016    => 'V5_016_000',
-  5.015004 => 'V5_015_004',
   5.014003 => 'V5_014_003',
   5.014002 => 'V5_014_002',
   5.014001 => 'V5_014_001',
@@ -177,8 +176,8 @@ are supported. To add support for another release, simply send me the
 release's F<perlapi.pod> via email or via an RT ticket and I'll add it
 in the next release.
 
-Additionally, the development release 5.15.4 is included.
-API docs for development may be dropped from the distribution
+API docs for development releases
+may be dropped from the distribution
 at any time. The general policy on this is to try
 and ship the APIs for the newest development release.
 
@@ -225,7 +224,7 @@ Steffen Mueller, E<lt>smueller@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2009, 2010, 2011, 2012 by Steffen Mueller
+Copyright (C) 2009, 2010, 2011, 2012, 2013 by Steffen Mueller
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.6.0 or,
