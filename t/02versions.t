@@ -1,15 +1,20 @@
 use strict;
 use warnings;
+use Perl::APIReference;
 
+my @Perls;
 BEGIN {
-    use Perl::APIReference;
-    use vars qw( @Perls );
-    @Perls = sort keys %Perl::APIReference::Perls;
+  @Perls = sort keys %Perl::APIReference::Perls;
 }
 
 use Test::More tests => scalar( @Perls );
 
 foreach my $version (@Perls) {
-    eval "Perl::APIReference->new( perl_version => $version );";
-    ok( !$@, $version );
+  ok(
+    eval {
+      Perl::APIReference->new( perl_version => $version );
+      1;
+    },
+    $version
+  );
 }
