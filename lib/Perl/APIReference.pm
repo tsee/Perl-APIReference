@@ -6,7 +6,7 @@ use warnings;
 use Carp qw/croak/;
 use version;
 
-our $VERSION = '0.13';
+our $VERSION = '0.14';
 
 use Class::XSAccessor
   getters => {
