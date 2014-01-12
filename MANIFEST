@@ -55,6 +55,7 @@ lib/Perl/APIReference/V5_016_002.pm
 lib/Perl/APIReference/V5_016_003.pm
 lib/Perl/APIReference/V5_018_000.pm
 lib/Perl/APIReference/V5_018_001.pm
+lib/Perl/APIReference/V5_018_002.pm
 Makefile.PL
 MANIFEST			This list of files
 MANIFEST.SKIP
