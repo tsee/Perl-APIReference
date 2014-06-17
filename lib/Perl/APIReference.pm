@@ -6,7 +6,7 @@ use warnings;
 use Carp qw/croak/;
 use version;
 
-our $VERSION = '0.16';
+our $VERSION = '0.17';
 
 use Class::XSAccessor
   getters => {
@@ -20,6 +20,7 @@ sub _par_loader_hint {
 }
 
 our %Perls = (
+  5.02     => 'V5_020_000',
   5.018002 => 'V5_018_002',
   5.018001 => 'V5_018_001',
   5.018000 => 'V5_018_000',
@@ -32,13 +33,14 @@ our %Perls = (
   5.014002 => 'V5_014_002',
   5.014001 => 'V5_014_001',
   5.014    => 'V5_014_000',
+  5.012005 => 'V5_012_005',
   5.012004 => 'V5_012_004',
   5.012003 => 'V5_012_003',
   5.012002 => 'V5_012_002',
   5.012001 => 'V5_012_001',
   5.012    => 'V5_012_000',
-  5.01     => 'V5_010_000',
   5.010001 => 'V5_010_001',
+  5.01     => 'V5_010_000',
   5.008009 => 'V5_008_009',
   5.008008 => 'V5_008_008',
   5.008007 => 'V5_008_007',
@@ -54,9 +56,11 @@ our %Perls = (
   5.006    => 'V5_006_000',
 );
 
-our $NewestAPI       = '5.018002';
-our $NewestStableAPI = '5.018002';
+our $NewestAPI       = '5.020';
+our $NewestStableAPI = '5.020';
 
+$Perls{'5.020'}    = $Perls{5.02};
+$Perls{'5.020000'} = $Perls{5.02};
 $Perls{'5.018000'} = $Perls{5.018};
 $Perls{'5.016000'} = $Perls{5.016};
 $Perls{'5.014000'} = $Perls{5.014};
@@ -176,7 +180,7 @@ Perl::APIReference - Programmatically query the perlapi
 This module allows accessing the perlapi documentation for multiple
 releases of perl as an index (a hash).
 
-Currently, the stable releases perl 5.18.0-2, 5.16.0-3, 5.14.0-3,
+Currently, the stable releases perl 5.20.0, 5.18.0-2, 5.16.0-3, 5.14.0-3,
 5.12.0-4, 5.10.0-1, 5.8.0-9, and 5.6.0-2
 are supported. To add support for another release, simply send me the
 release's F<perlapi.pod> via email or via an RT ticket and I'll add it
