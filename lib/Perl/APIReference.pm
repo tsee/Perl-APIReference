@@ -135,6 +135,7 @@ sub _dump_as_class {
   
   require Data::Dumper;
   local $Data::Dumper::Indent = 0;
+  local $Data::Dumper::Sortkeys = 1;
   my $dumper = Data::Dumper->new([$self->{'index'}]);
   my $dump = $dumper->Dump();
   
