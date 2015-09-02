@@ -16,7 +16,7 @@ use Class::XSAccessor
 
 sub _par_loader_hint {
   require Perl::APIReference::Generator;
-  require Perl::APIReference::V5_020_001;
+  require Perl::APIReference::V5_022_000;
 }
 
 our %Perls = (
