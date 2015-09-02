@@ -8,7 +8,7 @@ use version;
 use Sereal::Encoder;
 use Sereal::Decoder;
 
-our $VERSION = '0.20';
+our $VERSION = '0.21';
 
 use Class::XSAccessor
   getters => {

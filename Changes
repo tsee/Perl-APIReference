@@ -1,5 +1,11 @@
 Revision history for Perl extension Perl::APIReference.
 
+0.21  Wed Sep  2 18:00:00 2015
+  - Use compressed Sereal for encoding instead of Data::Dumper.
+    Reduces the disk footprint after installation by 4x.
+    The compressed tarball on the other hand is marginally bigger
+    because it means that we double-zlib compress the data.
+
 0.20  Wed Sep  2 14:40:00 2015
   - Perl 5.22.0 support.
 
