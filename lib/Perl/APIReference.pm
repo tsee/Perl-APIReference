@@ -6,7 +6,7 @@ use warnings;
 use Carp qw/croak/;
 use version;
 
-our $VERSION = '0.19';
+our $VERSION = '0.20';
 
 use Class::XSAccessor
   getters => {
@@ -239,7 +239,7 @@ Steffen Mueller, E<lt>smueller@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2009, 2010, 2011, 2012, 2013, 2014, 2015 by Steffen Mueller
+Copyright (C) 2009-2015 by Steffen Mueller
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.6.0 or,
