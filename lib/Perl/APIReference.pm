@@ -20,6 +20,7 @@ sub _par_loader_hint {
 }
 
 our %Perls = (
+  5.022    => 'V5_022_000',
   5.020002 => 'V5_020_002',
   5.020001 => 'V5_020_001',
   5.02     => 'V5_020_000',
@@ -58,9 +59,10 @@ our %Perls = (
   5.006    => 'V5_006_000',
 );
 
-our $NewestAPI       = '5.020002';
-our $NewestStableAPI = '5.020002';
+our $NewestAPI       = '5.022';
+our $NewestStableAPI = '5.022';
 
+$Perls{'5.022000'} = $Perls{5.022};
 $Perls{'5.020'}    = $Perls{5.02};
 $Perls{'5.020000'} = $Perls{5.02};
 $Perls{'5.018000'} = $Perls{5.018};
@@ -183,8 +185,8 @@ Perl::APIReference - Programmatically query the perlapi
 This module allows accessing the perlapi documentation for multiple
 releases of perl as an index (a hash).
 
-Currently, the stable releases perl 5.20.0-2, 5.18.0-2, 5.16.0-3, 5.14.0-3,
-5.12.0-4, 5.10.0-1, 5.8.0-9, and 5.6.0-2
+Currently, the stable releases perl 5.22.0, 5.20.0-2, 5.18.0-2, 5.16.0-3,
+5.14.0-3, 5.12.0-4, 5.10.0-1, 5.8.0-9, and 5.6.0-2
 are supported. To add support for another release, simply send me the
 release's F<perlapi.pod> via email or via an RT ticket and I'll add it
 in the next release.
