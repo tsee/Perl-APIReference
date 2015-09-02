@@ -5,6 +5,8 @@ use strict;
 use warnings;
 use Carp qw/croak/;
 use version;
+use Sereal::Encoder;
+use Sereal::Decoder;
 
 our $VERSION = '0.20';
 
@@ -72,7 +74,7 @@ $Perls{'5.012000'} = $Perls{5.012};
 $Perls{'5.010000'} = $Perls{5.01};
 $Perls{'5.010'}    = $Perls{5.01};
 $Perls{'5.008000'} = $Perls{5.008};
-$Perls{'5.008000'} = $Perls{5.006};
+$Perls{'5.006000'} = $Perls{5.006};
 #$Perls{'5.000'} = $Perls{5};
 
 sub _get_class_name {
@@ -136,34 +138,47 @@ sub _dump_as_class {
   my $file_name = $classname;
   $file_name =~ s/^.*::([^:]+)$/$1.pm/;
   
-  require Data::Dumper;
-  local $Data::Dumper::Indent = 0;
-  local $Data::Dumper::Sortkeys = 1;
-  my $dumper = Data::Dumper->new([$self->{'index'}]);
-  my $dump = $dumper->Dump();
+  require Sereal::Encoder;
+  my $data = $self->{'index'};
+  my $dump = Sereal::Encoder->new({
+    compress       => Sereal::Encoder::SRL_ZLIB(),
+    compress_level => 9,
+    dedupe_strings => 1,
+  })->encode($data);
   
   open my $fh, '>', $file_name or die $!;
+  binmode $fh;
   print $fh <<HERE;
 package $classname;
 use strict;
 use warnings;
+use Sereal::Decoder;
 use parent 'Perl::APIReference';
 
 sub new {
   my \$class = shift;
-  my \$VAR1;
+  my \$pos = tell(*DATA);
+  binmode(*DATA);
+  local \$/ = undef;
 
-do{$dump};
+  my \$data = <DATA>;
+  \$data =~ s/^\\s+//;
 
   my \$self = bless({
-    'index' => \$VAR1,
+    'index'      => Sereal::Decoder::decode_sereal(\$data),
     perl_version => '$version',
   } => \$class);
+
+  seek(*DATA, \$pos, 0);
+
   return \$self;
 }
 
 1;
+
 HERE
+  print $fh "__DATA__\n";
+  print $fh $dump;
 }
 
 
