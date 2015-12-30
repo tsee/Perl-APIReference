@@ -141,6 +141,7 @@ sub _dump_as_class {
   require Sereal::Encoder;
   my $data = $self->{'index'};
   my $dump = Sereal::Encoder->new({
+    canonical      => 1,
     compress       => Sereal::Encoder::SRL_ZLIB(),
     compress_level => 9,
     dedupe_strings => 1,
