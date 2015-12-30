@@ -8,7 +8,7 @@ use version;
 use Sereal::Encoder;
 use Sereal::Decoder;
 
-our $VERSION = '0.21';
+our $VERSION = '0.22';
 
 use Class::XSAccessor
   getters => {
@@ -18,10 +18,11 @@ use Class::XSAccessor
 
 sub _par_loader_hint {
   require Perl::APIReference::Generator;
-  require Perl::APIReference::V5_022_000;
+  require Perl::APIReference::V5_022_001;
 }
 
 our %Perls = (
+  5.022001 => 'V5_022_001',
   5.022    => 'V5_022_000',
   5.020002 => 'V5_020_002',
   5.020001 => 'V5_020_001',
@@ -61,8 +62,8 @@ our %Perls = (
   5.006    => 'V5_006_000',
 );
 
-our $NewestAPI       = '5.022';
-our $NewestStableAPI = '5.022';
+our $NewestAPI       = '5.022001';
+our $NewestStableAPI = '5.022001';
 
 $Perls{'5.022000'} = $Perls{5.022};
 $Perls{'5.020'}    = $Perls{5.02};
@@ -193,7 +194,7 @@ Perl::APIReference - Programmatically query the perlapi
 =head1 SYNOPSIS
 
   use Perl::APIReference;
-  my $api = Perl::APIReference->new(perl_version => '5.18.2');
+  my $api = Perl::APIReference->new(perl_version => '5.22.1');
   my $api_index_hash = $api->index;
 
 =head1 DESCRIPTION
@@ -201,7 +202,7 @@ Perl::APIReference - Programmatically query the perlapi
 This module allows accessing the perlapi documentation for multiple
 releases of perl as an index (a hash).
 
-Currently, the stable releases perl 5.22.0, 5.20.0-2, 5.18.0-2, 5.16.0-3,
+Currently, the stable releases perl 5.22.0-1, 5.20.0-2, 5.18.0-2, 5.16.0-3,
 5.14.0-3, 5.12.0-4, 5.10.0-1, 5.8.0-9, and 5.6.0-2
 are supported. To add support for another release, simply send me the
 release's F<perlapi.pod> via email or via an RT ticket and I'll add it
