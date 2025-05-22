@@ -50,7 +50,7 @@ See L<perlcall>.
 NOTE: the perl_ form of this function is deprecated.
 
 	I32	call_sv(SV* sv, VOL I32 flags)','name' => 'call_sv'};
-  $obj->{'index'}{'mg_get'} = {'text' => '','name' => 'mg_get'};
+
   return $obj;
 }
 
